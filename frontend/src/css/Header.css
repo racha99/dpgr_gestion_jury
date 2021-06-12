@@ -1,0 +1,41 @@
+.head {
+  background-color: dodgerblue !important;
+  display: flex;
+  height: 50px;
+  align-items: baseline;
+}
+
+.logo {
+  justify-content: flex-end;
+}
+
+.dpgr {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  bottom: -10px;
+  left: -10px;
+}
+
+.profil {
+  height: auto;
+  align-self: center;
+  align-items: center;
+  position: relative;
+  left: 75%;
+  display: flex;
+  color: white;
+}
+
+.profil p {
+  position: relative;
+  height: auto;
+  bottom: -8px;
+  align-self: baseline !important;
+}
+
+.dpgr p {
+  font-weight: bold;
+  font-size: 15pt;
+  color: azure;
+}
