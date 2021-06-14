@@ -20,8 +20,10 @@ from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^api/students/$', views.students_list),
-    re_path(r'^api/students/([0-9])$', views.students_detail),
-    re_path(r'^api/soutenances/$', views.soutenances_list),
-    re_path(r'^api/soutenances/([0-9])$', views.soutenances_detail),
+    re_path(r'^api/students/getStudents/$', views.students_list),
+    re_path(r'^api/students/getStudent/([0-9])$', views.students_detail),
+    re_path(r'^api/students/getSoutenances/$', views.soutenances_list),
+    re_path(r'^api/students/getSoutenance/([0-9])$', views.soutenances_detail),
+    re_path(r'^api/students/updtDossierEtat/([0-9])$', views.updt_dossier_etat),
+    re_path(r'^api/students/getStnList/([A-Za-z])$', views.get_stn_list)
 ]

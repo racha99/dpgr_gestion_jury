@@ -1,27 +1,38 @@
 import React, { Component } from "react";
 import { Col, Container, Row } from "reactstrap";
-import StudentList from "./StudentList";
-import NewStudentModal from "./NewStudentModal";
+import SoutenanceList from "./SoutenanceList";
 
 import axios from "axios";
 
 import { API_URL } from "../constants";
 
 class Home extends Component {
+  // state = {
+  //   students: [],
+  // };
+
+  type = this.props.type;
+
   state = {
-    students: [],
+    soutenances: [],
   };
 
   componentDidMount() {
     this.resetState();
   }
 
-  getStudents = () => {
-    axios.get(API_URL).then((res) => this.setState({ students: res.data }));
+  // getStudents = () => {
+  //   axios.get(API_URL).then((res) => this.setState({ students: res.data }));
+  // };
+
+  getSoutenances = () => {
+    axios
+      .get(API_URL + "getStnList/" + this.type)
+      .then((res) => this.setState({ soutenances: res.data }));
   };
 
   resetState = () => {
-    this.getStudents();
+    this.getSoutenances();
   };
 
   render() {
@@ -29,15 +40,11 @@ class Home extends Component {
       <Container style={{ marginTop: "20px" }}>
         <Row>
           <Col>
-            <StudentList
-              students={this.state.students}
+            <SoutenanceList
+              soutenances={this.state.soutenances}
               resetState={this.resetState}
+              type={this.type}
             />
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <NewStudentModal create={true} resetState={this.resetState} />
           </Col>
         </Row>
       </Container>

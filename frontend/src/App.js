@@ -11,7 +11,7 @@ class App extends Component {
       <Fragment>
         <Header />
         <Sidebar />
-        <Home />
+        <Home type={"D"} />
       </Fragment>
     );
   }

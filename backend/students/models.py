@@ -18,7 +18,7 @@ class Laureat(models.Model):
     email = models.EmailField()
     
     def __str__(self):
-        return self.id
+        return self.l_id
 
 class Dossier(models.Model):
     
@@ -33,7 +33,10 @@ class Dossier(models.Model):
     lien = models.URLField(max_length = 200)
     
     def __str__(self):
-        return self.id
+        print("d_id =", self.d_id)
+        print("etat =", self.etat)
+        print("lien =", end=" ")
+        return self.lien
 
 class Soutenance(models.Model):
     
@@ -66,4 +69,44 @@ class Soutenance(models.Model):
     sujet = models.CharField("Sujet", max_length=150)
     
     def __str__(self):
-        return self.id
+        return self.s_id
+    
+class StnPrst(models.Model):
+    
+    THEMES = [
+        ('ML', "Machine Learning"),
+        ('ST', "Systeme d'Information"),
+        ('SQ', "Systeme Informatique"),
+        ('RS', "Réseaux & Sécurité"),
+        ('GL', "Géni-Logiciel"),
+    ]
+    
+    TYPES = [
+        ('D', "Doctorat"),
+        ('H', "Habilitation"),
+    ]
+    
+    ETATS = [
+        ('A', "Autorisée"),
+        ('R', "Refusée"),
+        ('N', "Non définie"),
+        ('C', "Cloturée"),
+    ]
+    
+    ETATS_D = [
+        ('V', "Validé"),
+        ('R', "Refusé"),
+        ('A', "En attente"),
+    ]
+    
+    s_id = models.IntegerField(unique=True, primary_key=True)
+    laureat_nom = models.CharField("Nom Laureat", max_length=100)
+    dossier_lien = models.CharField("Lien Dossier", max_length=200)
+    dossier_etat = models.CharField("Etat Dossier", max_length=1, choices=ETATS_D, default='A')
+    theme = models.CharField("Thème", max_length=2, choices=THEMES)
+    type = models.CharField("Type", max_length=1, choices=TYPES)
+    etat = models.CharField("Etat", max_length=1, choices=ETATS, default='N')
+    sujet = models.CharField("Sujet", max_length=150)
+    
+    def __str__(self):
+        return self.s_id
