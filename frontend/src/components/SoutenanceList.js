@@ -5,8 +5,40 @@ import ValidDossierModal from "./ValidDossierModal";
 import RefusDossierModal from "./RefusDossierModal";
 
 class SoutenanceList extends Component {
+  sETATS = {
+    A: "Autorisée",
+    R: "Refusée",
+    N: "Non définie",
+    C: "Cloturée",
+  };
+
+  sETATS_D = {
+    V: "Validé",
+    R: "Refusé",
+    A: "En attente",
+  };
+
   render() {
     const soutenances = this.props.soutenances;
+
+    let mapTHEMES = new Map();
+    mapTHEMES.set("ML", "Machine Learning");
+    mapTHEMES.set("ST", "Systeme d'Information");
+    mapTHEMES.set("SQ", "Systeme Informatique");
+    mapTHEMES.set("RS", "Réseaux & Sécurité");
+    mapTHEMES.set("GL", "Géni-Logiciel");
+
+    let mapETATS = new Map();
+    mapETATS.set("A", "Autorisée");
+    mapETATS.set("R", "Refusée");
+    mapETATS.set("N", "Non définie");
+    mapETATS.set("C", "Cloturée");
+
+    let mapETATS_D = new Map();
+    mapETATS_D.set("V", "Validé");
+    mapETATS_D.set("R", "Refusé");
+    mapETATS_D.set("A", "En attente");
+
     return (
       <Table dark>
         <thead>
@@ -33,21 +65,20 @@ class SoutenanceList extends Component {
               <tr key={soutenance.s_id}>
                 <td>{soutenance.s_id}</td>
                 <td>{soutenance.laureat_nom}</td>
-                <td>{soutenance.theme}</td>
+                <td>{mapTHEMES.get(soutenance.theme)}</td>
                 <td>{soutenance.sujet}</td>
                 <td>
                   {" "}
                   <a href={soutenance.dossier_lien}>dossier</a>
                 </td>
-                <td>{soutenance.etat}</td>
-                <td>{soutenance.dossier_etat}</td>
+                <td>{mapETATS.get(soutenance.etat)}</td>
+                <td>{mapETATS_D.get(soutenance.dossier_etat)}</td>
                 <td align="center">
                   <ValidDossierModal
                     soutenance={soutenance}
                     resetState={this.props.resetState}
                     type={this.props.type}
                   />
-                  &nbsp;&nbsp;
                   <RefusDossierModal
                     soutenance={soutenance}
                     resetState={this.props.resetState}

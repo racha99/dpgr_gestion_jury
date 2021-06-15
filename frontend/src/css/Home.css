@@ -1,0 +1,26 @@
+.expanded {
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  justify-content: end;
+  margin-left: 60pt;
+  transition: all 1s ease;
+}
+
+.collapsed {
+  transition: all 1s ease;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  justify-content: end;
+  margin-left: 200pt;
+}
+
+.title {
+  margin-left: 20pt;
+}
+
+.tsmall {
+  margin-bottom: 10pt;
+  color: dodgerblue;
+}

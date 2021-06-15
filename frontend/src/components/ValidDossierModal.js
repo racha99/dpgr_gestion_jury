@@ -31,7 +31,7 @@ class ValidDossierModal extends Component {
             color="primary"
             //className="float-right"
             onClick={this.toggle}
-            //style={{ minWidth: "200px" }}
+            style={{ marginRight: "10px" }}
           >
             Valider
           </Button>

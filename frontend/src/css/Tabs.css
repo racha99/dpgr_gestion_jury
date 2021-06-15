@@ -1,0 +1,31 @@
+.tab-list {
+  border-bottom: 1px solid #ccc;
+  padding-left: 100px;
+}
+
+.tab-list-item {
+  cursor: pointer;
+  display: inline-block;
+  list-style: none;
+  margin-bottom: -1px;
+  margin-left: 1px;
+  margin-right: 1px;
+  padding: 0.25rem 1.5rem;
+  border: solid gray;
+  border-radius: 10px 10px 0 0;
+  border-width: 1px 1px 0 1px;
+  color: gray;
+  background-color: rgba(131, 130, 130, 0.233);
+  box-shadow: #ccc;
+}
+
+.tab-list-active {
+  padding-top: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-radius: 10px 10px 0 0;
+  background-color: white;
+  border: solid dodgerblue;
+  border-width: 2px 2px 0 2px;
+  color: dodgerblue;
+}

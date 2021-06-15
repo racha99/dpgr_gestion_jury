@@ -1,15 +1,23 @@
 .logout {
-  position: absolute !important;
-  bottom: 10px;
+  position: absolute;
+
+  margin-top: 37vh;
+  margin-bottom: 10vh;
 }
 
 .sn {
+  width: 5% !important;
+  transition: all 1s ease !important;
   position: fixed !important;
   display: block !important;
   top: 50px !important;
   background: rgb(248, 248, 248) !important;
   z-index: 0 !important;
   border-right: 1pt rgba(30, 143, 255, 0.219) solid !important;
+}
+
+.navitem * {
+  transition: visibility 0s 0.3s, opacity 0.3s linear !important;
 }
 
 .sidenav---sidenav-nav---3tvij
@@ -92,7 +100,6 @@
   > .sidenav---navitem---9uL5T {
   color: dodgerblue !important;
   font-weight: bold;
-  background: none;
   cursor: default;
 }
 .sidenav---sidenav-subnav---1EN61
@@ -105,7 +112,7 @@
   > .sidenav---sidenav-navitem---uwIJ-:hover.sidenav---highlighted---oUx9u
   > .sidenav---navitem---9uL5T::after {
   background: dodgerblue !important;
-  opacity: 0.2;
+  opacity: 0.2 !important;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
   filter: alpha(opacity=20);
 }
@@ -116,7 +123,8 @@
   > .sidenav---sidenav-navitem---uwIJ-:hover.sidenav---highlighted---oUx9u.sidenav---expanded---1KdUL
   > .sidenav---navitem---9uL5T::after {
   background: dodgerblue !important;
-  opacity: 0.25;
+
+  opacity: 0.25 !important;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
   filter: alpha(opacity=25);
 }
@@ -127,7 +135,7 @@
   > .sidenav---sidenav-navitem---uwIJ-:hover.sidenav---highlighted---oUx9u.sidenav---selected---1EK3y.sidenav---expanded---1KdUL
   > .sidenav---navitem---9uL5T::after {
   background: dodgerblue !important;
-  opacity: 0.2;
+  opacity: 0.2 !important;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
   filter: alpha(opacity=20);
 }
@@ -205,7 +213,41 @@
   .sidenav---sidenav-subnav---1EN61
   > .sidenav---sidenav-subnavitem---1cD47:hover::before {
   background: dodgerblue !important;
+
   opacity: 0.15;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=15);
+}
+
+.sidenav---sidenav-nav---3tvij
+  > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u
+  > .sidenav---navitem---9uL5T::after,
+.sidenav---sidenav-nav---3tvij
+  > .sidenav---sidenav-navitem---uwIJ-:hover.sidenav---highlighted---oUx9u
+  > .sidenav---navitem---9uL5T::after {
+  background: rgb(255, 255, 255) !important;
+  border-left: dodgerblue 0.5em solid !important;
+  opacity: 1 !important;
+}
+.sidenav---sidenav-nav---3tvij
+  > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u.sidenav---expanded---1KdUL
+  > .sidenav---navitem---9uL5T::after,
+.sidenav---sidenav-nav---3tvij
+  > .sidenav---sidenav-navitem---uwIJ-:hover.sidenav---highlighted---oUx9u.sidenav---expanded---1KdUL
+  > .sidenav---navitem---9uL5T::after {
+  background: none !important;
+  border-left: dodgerblue 0.5em solid !important;
+  border: 0px !important;
+  opacity: 1 !important;
+}
+.sidenav---sidenav-nav---3tvij
+  > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u.sidenav---selected---1EK3y.sidenav---expanded---1KdUL
+  > .sidenav---navitem---9uL5T::after,
+.sidenav---sidenav-nav---3tvij
+  > .sidenav---sidenav-navitem---uwIJ-:hover.sidenav---highlighted---oUx9u.sidenav---selected---1EK3y.sidenav---expanded---1KdUL
+  > .sidenav---navitem---9uL5T::after {
+  background: none !important;
+  border-left: dodgerblue 0.5em solid !important;
+  border: 0px !important;
+  opacity: 1 !important;
 }
