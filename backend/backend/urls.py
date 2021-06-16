@@ -15,15 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
-from students import views
+from soutenance import views
 from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^api/students/getStudents/$', views.students_list),
-    re_path(r'^api/students/getStudent/([0-9])$', views.students_detail),
-    re_path(r'^api/students/getSoutenances/$', views.soutenances_list),
-    re_path(r'^api/students/getSoutenance/([0-9])$', views.soutenances_detail),
-    re_path(r'^api/students/updtDossierEtat/([0-9])$', views.updt_dossier_etat),
-    re_path(r'^api/students/getStnList/([A-Za-z])$', views.get_stn_list)
+    re_path(r'^api/soutenance/getSoutenances/$', views.soutenances_list),
+    re_path(r'^api/soutenance/getSoutenance/([0-9])$', views.soutenances_detail),
+    re_path(r'^api/soutenance/updtDossierEtat/([0-9])$', views.updt_dossier_etat),
+    re_path(r'^api/soutenance/updtStnEtat/([0-9])$', views.updt_stn_etat),
+    re_path(r'^api/soutenance/getStnListByType/([A-Za-z])$', views.get_stn_list_by_type),
+    re_path(r'^api/soutenance/getStnListByEtatD/([A-Za-z])$', views.get_stn_list_by_etatd),
 ]

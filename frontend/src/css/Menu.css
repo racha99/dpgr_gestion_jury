@@ -1,0 +1,56 @@
+.card-container {
+  width: 80%;
+  height: 350pt;
+  position: relative;
+  overflow-x: scroll;
+  display: flex;
+  margin: 10px 50px;
+}
+
+.card {
+  width: 200pt;
+  margin: 0 7px;
+  height: 320pt;
+  transition: 0.2s;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.e1 {
+  position: relative;
+  top: 25%;
+  align-items: center;
+  justify-content: center;
+}
+
+.e2 {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  top: 30%;
+}
+
+.text {
+  margin: 0 20px;
+  text-align: center;
+  color: dodgerblue;
+}
+.e2 .img {
+  position: relative;
+  top: 25%;
+}
+
+.e1 .img {
+  position: relative;
+  top: -25%;
+}
+
+.e2 .text {
+  position: relative;
+  top: 10%;
+}
+
+.e1 .img {
+  position: relative;
+  top: -10%;
+}

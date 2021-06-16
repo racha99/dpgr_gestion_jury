@@ -6,7 +6,7 @@ import axios from "axios";
 
 import { API_URL } from "../constants";
 
-class OngletValidDossier extends Component {
+class OngletAutStn extends Component {
   type = this.props.type;
 
   state = {
@@ -47,4 +47,4 @@ class OngletValidDossier extends Component {
   }
 }
 
-export default OngletValidDossier;
+export default OngletAutStn;

@@ -1,11 +1,6 @@
 from rest_framework import serializers
 from .models import *
 
-class StudentSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Student 
-        fields = ('pk', 'name', 'email', 'document', 'phone', 'registrationDate')
     
 class SoutenanceSerializer(serializers.ModelSerializer):
     
@@ -24,6 +19,19 @@ class LaureatSerializer(serializers.ModelSerializer):
     class Meta:
         model = Laureat 
         fields = ('l_id', 'nom', 'prenom', 'email')
+        
+class JurySerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = Jury 
+        fields = '__all__'
+
+class JuryStnSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = JuryStn 
+        fields = '__all__'
+
 
 class StnPrstSerializer(serializers.ModelSerializer):
     

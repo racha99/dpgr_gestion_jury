@@ -1,14 +1,40 @@
 from django.db import models
 
-class Student(models.Model):
-    name = models.CharField("Name", max_length=240)
-    email = models.EmailField()
-    document = models.CharField("Document", max_length=20)
-    phone = models.CharField(max_length=20)
-    registrationDate = models.DateField("Registration Date", auto_now_add=True)
 
+class Jury(models.Model):
+    
+    TYPES = [
+        ('E', "Expert"),
+        ('P', "Professeur"),
+    ]
+    
+    j_id = models.IntegerField(unique=True, primary_key=True)
+    nom = models.CharField("Nom", max_length=50)
+    prenom = models.CharField("Prenom", max_length=50)
+    domaine_xp = models.CharField("Domaine d'expertise", max_length=70)
+    type = models.CharField("Type", max_length=1, choices=TYPES)
+    tel_num = models.CharField("Numero de telephone", max_length=15)
+    email = models.EmailField()
+    
     def __str__(self):
-        return self.name
+        return self.j_id
+    
+class JuryStn(models.Model):
+    
+    ROLES = [
+        ('JU', "Jury"),
+        ('RP', "Rapporteur"),
+        ('DJ', "Directeur des Jurys"),
+        ('DR', "Directeur des Rapporteurs"),
+    ]
+    
+    js_id = models.IntegerField(unique=True, primary_key=True)
+    soutenance_id = models.ForeignKey(to='Soutenance', to_field='s_id', on_delete=models.CASCADE)
+    jury_id = models.ForeignKey(to='Jury', to_field='j_id', on_delete=models.CASCADE)
+    role = models.CharField("Role", max_length=2, choices=ROLES)
+    
+    def __str__(self):
+        return self.js_id
 
 class Laureat(models.Model):
     
