@@ -26,4 +26,6 @@ urlpatterns = [
     re_path(r'^api/soutenance/updtStnEtat/([0-9])$', views.updt_stn_etat),
     re_path(r'^api/soutenance/getStnListByType/([A-Za-z])$', views.get_stn_list_by_type),
     re_path(r'^api/soutenance/getStnListByEtatD/([A-Za-z])$', views.get_stn_list_by_etatd),
+    re_path(r'^api/soutenance/getJurys/$', views.jurys_list),
+    re_path(r'^api/soutenance/getjury_list_soutenance/([0-9])', views.jury_list_soutenance),
 ]

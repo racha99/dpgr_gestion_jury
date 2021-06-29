@@ -60,6 +60,8 @@ def soutenances_list(request):
             
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
+
 @api_view(['PUT', 'DELETE'])
 def soutenances_detail(request, s_id):
     try:
@@ -147,3 +149,53 @@ def updt_stn_etat(request, s_id):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     
+#gestion Jury
+
+@api_view(['GET', 'POST'])
+def jurys_list(request):
+    if request.method == 'GET':
+        
+        data = Jury.objects.all()
+       
+        
+        serializer = JurySerializer(data, context={'request': request}, many=True)
+
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = JurySerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(status=status.HTTP_201_CREATED)
+            
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
+@api_view(['GET', 'POST'])
+def jury_list_soutenance(request,j_id):
+    if request.method == 'GET':
+
+        jury = Jury.objects.get(j_id=j_id)
+        
+
+      
+        jurySnt = JuryStn.objects.filter(jury_id=jury).all()
+       
+
+        
+
+        
+        
+        serializer = JuryStnSerializer(jurySnt, context={'request': request}, many=True)
+
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer =  JuryStnSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(status=status.HTTP_201_CREATED)
+            
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
